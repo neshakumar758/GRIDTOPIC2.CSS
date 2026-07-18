@@ -1,0 +1,129 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "profile projects skills"
+        "about contact education";
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Grid Items */
+.grid-container section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profile {
+    grid-area: profile;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.about {
+    grid-area: about;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.education {
+    grid-area: education;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "profile projects"
+            "skills about"
+            "contact education";
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "profile"
+            "projects"
+            "skills"
+            "about"
+            "contact"
+            "education";
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
